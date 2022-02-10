@@ -22,6 +22,8 @@ jobs:
           dotnet-version: '6.x.x' # SDK Version to use.
       - name: Build solution and generate NuGet package
         run: dotnet build --configuration Release --output packages
+      - name: Create the package
+        run: dotnet pack --configuration Release --output packages
       - name: Upload NuGet package to GitHub
         uses: actions/upload-artifact@v2
         with:
@@ -38,7 +40,5 @@ jobs:
         uses: actions/download-artifact@v1.0.0
         with:
           name: packages
-      - name: Create the package
-        run: dotnet pack --configuration Release --output packages
       - name: Publish the package to GPRGitHub registry
         run: dotnet nuget push "packages/*.nupkg" --source "https://nuget.pkg.github.com/kiwsan-mc/index.json" --api-key ${{ github.token }}
