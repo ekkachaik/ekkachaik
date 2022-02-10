@@ -25,5 +25,5 @@ jobs:
       - name: DotNet Pack
         run: dotnet pack src --configuration Release --output packages
 
-      - name: DotNet NuGet Push
+      #- name: DotNet NuGet Push
         #run: dotnet nuget push "packages/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --no-symbols true --skip-duplicate
