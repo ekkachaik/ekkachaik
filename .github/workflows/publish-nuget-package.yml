@@ -27,5 +27,5 @@ jobs:
         run: dotnet build --configuration Release --output packages
       - name: Create the package
         run: dotnet pack --configuration Release --output packages
-      #- name: Publish the package to GPR
-      #  run: dotnet nuget push "packages/*.nupkg" --api-key ${{ secrets.GH_NUGET_AUTH_TOKEN }} --no-symbols true --skip-duplicate
+      - name: Publish the package to GPR
+        run: dotnet nuget push "packages/*.nupkg"

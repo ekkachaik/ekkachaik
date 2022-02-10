@@ -7,6 +7,10 @@
         <PackageTags>Extension, Extensions, Byte, Claim, ClaimsPrincipal, DirectoryInfo, Enum, Object, Queryable, String</PackageTags>
         <TargetFramework>net6.0</TargetFramework>
         <Title>DotNetCore.Extensions</Title>
+        <Version>1.0.0</Version>
+        <Authors>MCGroup</Authors>
+        <Company>MCGroup</Company>
+        <PackageDescription>This package adds a classlib</PackageDescription>
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
