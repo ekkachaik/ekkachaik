@@ -17,6 +17,6 @@ jobs:
           source-url: https://nuget.pkg.github.com/kiwsan-mc/index.json
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: dotnet build source --configuration Release --output packages
+      - run: dotnet build --configuration Release --output packages
       - name: Create the package
-        run: dotnet pack source --configuration Release --output packages
+        run: dotnet pack --configuration Release --output packages
