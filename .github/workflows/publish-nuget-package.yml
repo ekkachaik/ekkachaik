@@ -1,8 +1,7 @@
-name: Upload dotnet package
-
+name: publish
 on:
-  release:
-    types: [created]
+  push:
+    branches: [main]
 
 jobs:
   deploy:
