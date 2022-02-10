@@ -1,13 +1,7 @@
-name: 'CI For : Build, Pack, Push'
-
+name: publish
 on:
-  workflow_dispatch:
   push:
-    branches:
-    - main
-  pull_request:
-    branches:
-    - main
+    branches: [main]
     
 jobs:
   publish:
