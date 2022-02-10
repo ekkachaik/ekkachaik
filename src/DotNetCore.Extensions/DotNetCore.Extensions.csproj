@@ -3,15 +3,15 @@
         <AssemblyName>DotNetCore.Extensions</AssemblyName>
         <Description>DotNetCore.Extensions</Description>
         <PackageId>DotNetCore.Extensions</PackageId>
-        <PackageProjectUrl>https://github.com/kiwsan-mc/ekkachaik</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/kiwsan-mc/kiwsan-mc</PackageProjectUrl>
         <PackageTags>Extension, Extensions, Byte, Claim, ClaimsPrincipal, DirectoryInfo, Enum, Object, Queryable, String</PackageTags>
         <TargetFramework>net6.0</TargetFramework>
         <Title>DotNetCore.Extensions</Title>
-        <Version>1.0.3</Version>
+        <Version>1.0.4</Version>
         <Authors>MCGroup</Authors>
         <Company>MCGroup</Company>
         <PackageDescription>This package adds a classlib</PackageDescription>
-        <RepositoryUrl>https://github.com/kiwsan-mc/ekkachaik</RepositoryUrl>
+        <RepositoryUrl>https://github.com/kiwsan-mc/kiwsan-mc</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
