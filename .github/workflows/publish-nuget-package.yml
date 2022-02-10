@@ -10,14 +10,16 @@ jobs:
       packages: write
       contents: read
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-dotnet@v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup .NET Core @ Latest
+        uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.x.x' # SDK Version to use.
           source-url: https://nuget.pkg.github.com/kiwsan-mc/index.json
         env:
-          NUGET_AUTH_TOKEN: ${{secrets.GH_NUGET_AUTH_TOKEN}}
-      - run: dotnet build --configuration Release --output packages
+          NUGET_AUTH_TOKEN: ${{secrets.GH_NUGET_AUTH_TOKEN}} 
+      - name: Build solution and generate NuGet package
+        run: dotnet build --configuration Release --output packages
       - name: Create the package
         run: dotnet pack --configuration Release --output packages
       #- name: Publish the package to GPR
