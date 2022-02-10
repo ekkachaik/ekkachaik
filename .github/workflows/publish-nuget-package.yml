@@ -1,0 +1,29 @@
+name: 'CI For : Build, Pack, Push'
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+    
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    needs: unlist
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: DotNet Setup
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "3.1.x"
+
+      - name: DotNet Pack
+        #run: dotnet pack source --configuration Release --output packages
+
+      - name: DotNet NuGet Push
+        #run: dotnet nuget push "packages/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --no-symbols true --skip-duplicate
