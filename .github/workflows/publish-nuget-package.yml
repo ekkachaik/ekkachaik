@@ -11,8 +11,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
-    name: Update NuGet package
+    runs-on: ubuntu-latest
+    name: Buid dotnet
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -22,6 +22,13 @@ jobs:
           dotnet-version: '6.x.x' # SDK Version to use.
       - name: Build solution and generate NuGet package
         run: dotnet build --configuration Release --output packages
+
+  release:
+    runs-on: ubuntu-latest
+    name: Publish NuGet package 
+    needs: build
+    if: github.ref == 'refs/heads/main' # only run job if on the main branch   
+    steps:
       - name: Create the package
         run: dotnet pack --configuration Release --output packages
       - name: Publish the package to GPRGitHub registry
