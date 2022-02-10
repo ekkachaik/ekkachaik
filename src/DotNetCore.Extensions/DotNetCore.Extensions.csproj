@@ -11,6 +11,7 @@
         <Authors>MCGroup</Authors>
         <Company>MCGroup</Company>
         <PackageDescription>This package adds a classlib</PackageDescription>
+        <RepositoryUrl>https://github.com/kiwsan-mc/ekkachaik</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
